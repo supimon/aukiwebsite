@@ -819,11 +819,11 @@
     ></script>
     <script>
       (function () {
-        // initiat emailJS object for form submission
+        /* initiat emailJS object for form submission */
         emailjs.init("user_HoQUsX3woGdjlDtLYqfoj");
-        // set copyright year
+        /* set copyright year */
         $("#copyright").text(new Date().getFullYear());
-        // show modals
+        /* show modals */
         $(".contact-us, .get-hired, .meet-team").click(function () {
           handleModal(this);
           $("#modal-container").removeAttr("class").addClass("reveal-me");
@@ -832,14 +832,14 @@
             $(".close-button").addClass("active");
           }, 500);
         });
-        // modal utility
+        /* modal utility */
         function handleModal(obj) {
           $($(obj).data("othermodals")).addClass("hidden").appendTo($("body"));
           $($(obj).data("currentmodal"))
             .appendTo(".modal")
             .removeClass("hidden");
         }
-        // close modal
+        /* close modal */
         $(".close-button").click(function () {
           $(".close-button").removeClass("active");
           $("#submit-btn").attr("disabled", true);
@@ -849,14 +849,14 @@
             $("body").removeClass("modal-active");
           }, 200);
         });
-        // job accordion animations
+        /* job accordion animations */
         $(".position").click(function () {
           $(this).toggleClass("active");
         });
-        // top into text animations
+        /* top into text animations */
         animateText($(".h3_1"));
         $(".h3_1").addClass("animator");
-        // intro text animation utility
+        /* intro text animation utility */
         function animateText(h3) {
           var nexth3 = $("." + h3.data("next"));
           h3.one(
@@ -868,7 +868,7 @@
             }
           );
         }
-        // scroll to services offer section
+        /* scroll to services offer section */
         $("#service-offer").on("click", function () {
           $("html, body").animate(
             {
@@ -877,11 +877,11 @@
             1000
           );
         });
-        // recaptcha callback
+        /* recaptcha callback */
         window.recaptcha_callback = function () {
           $("#submit-btn").removeAttr("disabled");
         };
-        // form submission
+        /* form submission */
         $("#submit-btn").on("click", function (event) {
           event.preventDefault();
 
